@@ -44,5 +44,16 @@ public class Boardstate {
     public void setTile(int x, int y, Piece n){
         State.get(x).get(y).setPiece(n);
     }
+    public ArrayList<Piece> getPieces(){
+        ArrayList<Piece> f = new ArrayList<>();
+        for (ArrayList<Tile> i : State){
+            for (Tile i2 : i){
+                if (i2.getPiece() != null){
+                    f.add(i2.getPiece());
+                }
+            }
+        }
+        return f;
+    }
 
 }
