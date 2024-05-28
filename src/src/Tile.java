@@ -13,10 +13,11 @@ public class Tile {
     }
 
     public boolean isLegalMove(Move m){
-        if (piece.isLegalMove(m) == 0) {
+        int i = piece.isLegalMove(m);
+        if (i == 0 || i == 5 || i == 6) {
             return false;
         }
-        if ((piece.isLegalMove(m) == 1 || piece.isLegalMove(m) == 1) && m.board.getTile(m.eX, m.eY).getPiece().Protection) {
+        if ((i == 1 || i == 2) && m.board.getTile(m.eX, m.eY).getPiece().Protection) {
             return false;
         }
         return true;
