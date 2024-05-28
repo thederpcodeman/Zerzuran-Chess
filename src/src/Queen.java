@@ -1,6 +1,11 @@
 public class Queen extends Piece{
     public Queen(int c){
         super(false, false, 9, c);
+        if (c == 0){
+            fen = "q";
+        }else if (c == 1){
+            fen = "Q";
+        }
     }
     public void update(){
 

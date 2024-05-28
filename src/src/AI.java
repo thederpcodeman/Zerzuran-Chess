@@ -13,7 +13,7 @@ public class AI {
         if (b.turn){
             hs = -99999;
             for (Move i : m){
-                double s = ScoreMove.score(i.done(), 3);
+                double s = ScoreMove.fScore(i.done());
                 if (s > hs){
                     hs = s;
                     f = i;
@@ -22,7 +22,7 @@ public class AI {
         }else{
             hs = 99999;
             for (Move i : m){
-                double s = ScoreMove.score(i.done(), 3);
+                double s = ScoreMove.fScore(i.done());
                 if (s < hs){
                     hs = s;
                     f = i;

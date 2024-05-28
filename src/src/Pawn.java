@@ -1,6 +1,11 @@
 public class Pawn extends Piece{
     public Pawn(int c){
         super(false, false, 3, c);
+        if (c == 0){
+            fen = "p";
+        }else if (c == 1){
+            fen = "P";
+        }
     }
     public void update(){
 

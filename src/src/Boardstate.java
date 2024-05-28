@@ -84,4 +84,28 @@ public class Boardstate {
         }
         return f;
     }
+
+    public String fen(){
+        String f = "";
+        for (int i = 0; i < X; i ++){
+            int a = 0;
+            for (int i2 = 0; i2 < Y; i2 ++){
+                Tile t = getTile(i, i2);
+                if (t.getPiece() == null){
+                    a ++;
+                }else {
+                    if (a > 0){
+                        f += a;
+                        a = 0;
+                    }
+                    f += t.getPiece().fen;
+                }
+            }
+            if (a > 0){
+                f += a;
+                a = 0;
+            }
+        }
+        return f;
+    }
 }

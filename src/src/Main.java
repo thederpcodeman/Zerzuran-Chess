@@ -31,7 +31,9 @@ public class Main {
         }
 
         while (true){
+            System.out.println(b.fen());
             b = AI.ROB(b).done();
+            System.out.println(b.fen());
         }
     }
 }
