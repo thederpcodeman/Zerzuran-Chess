@@ -1,9 +1,38 @@
+import java.util.ArrayList;
+
 public class ScoreMove {
     public static double score(Boardstate c, int d){
         if (d <= 0 || !stillGoing(c)){
             return fScore(c);
         }
-        return 0;//waiting on getlegalmoves
+        double hs;
+        if (c.turn){
+            hs = -99999;
+            Move b;
+            ArrayList<Move> m = c.getLegalMoves();
+            b = m.get(0);
+            for (Move i : m){
+                double s = score(i.done(), d -1);
+                if (s > hs){
+                    hs = s;
+                    b = i;
+                }
+            }
+        }else{
+            hs = 99999;
+            Move b;
+            ArrayList<Move> m = c.getLegalMoves();
+            b = m.get(0);
+            for (Move i : m){
+                double s = score(i.done(), d -1);
+                if (s > hs){
+                    hs = s;
+                    b = i;
+                }
+            }
+        }
+
+        return hs;
 
     }
 

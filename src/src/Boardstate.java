@@ -7,9 +7,11 @@ public class Boardstate {
 
     private int X;
     private int Y;
+    public boolean turn; //true = W
     public Boardstate(int x, int y){
         X = x;
         Y = y;
+        turn = true;
         State = new ArrayList<>();
         for (int i = 0; i < X; i++){
             ArrayList<Tile> iAr = new ArrayList<>();
@@ -23,6 +25,7 @@ public class Boardstate {
     public Boardstate(Boardstate c){
         X = c.X;
         Y = c.Y;
+        turn = c.turn;
         State = new ArrayList<>();
         for (int i = 0; i < X; i++){
             ArrayList<Tile> iAr = new ArrayList<>();
@@ -56,4 +59,24 @@ public class Boardstate {
         return f;
     }
 
+    public void switchTurn(){
+        turn = !turn;
+    }
+
+    public ArrayList<Move> getLegalMoves() {
+        ArrayList<Move> f = new ArrayList<>();
+        for (int sX = 0; sX < X; sX++){
+            for (int sY = 0; sY < Y; sY++){
+                for (int eX = 0; eX < X; eX++){
+                    for (int eY = 0; eY < Y; eY++){
+                        Tile i = getTile(sX, sY);
+                        if ((i.getPiece() != null) && (i.isLegalMove(new Move(sX, eX, sY, eY, this)))){
+                            f.add(new Move(sX, eX, sY, eY, this));
+                        }
+                    }
+                }
+            }
+        }
+        return f;
+    }
 }

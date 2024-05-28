@@ -25,12 +25,14 @@ public class Move {
         if (i == 1 || i == 4) {
             n.setTile(eX, eY, board.getTile(sX, sY).getPiece());
             n.setTile(sX, sY, null);
-
+            n.switchTurn();
         }else if (i == 2){
             n.setTile(eX, eY, null);
+            n.switchTurn();
         }else if (i == 3){
             n.setTile(eX, eY, board.getTile(sX, sY).getPiece());
             n.setTile(sX, sY, board.getTile(eX, eY).getPiece());
+            n.switchTurn();
         }
         return n;
     }
