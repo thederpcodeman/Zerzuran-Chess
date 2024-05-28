@@ -1,12 +1,12 @@
-public class Rook extends Piece{
-    public Rook(int c){
-        super(false, false, 5, c);
+public class King extends Piece{
+    public King(int c){
+        super(true, false, 4, c);
     }
     public void update(){
 
     }
     public int isLegalMove(Move m){
-        if (MCode.rook(m)) {
+        if (MCode.square(m, 1)) {
             if (MCode.ff(m)) {
 
                 return 5;

@@ -42,4 +42,10 @@ public class MCode {
         }
         return false;
     }
+
+    public static boolean square(Move m, int s){
+        int dx = Math.abs(m.eX - m.sX);
+        int dy = Math.abs(m.eY - m.sY);
+        return(dx <= s && dy <= s);
+    }
 }
