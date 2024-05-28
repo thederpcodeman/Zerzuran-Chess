@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class ScoreMove {
-    public static double score(Boardstate c, int d){
-        if (d <= 0 || !stillGoing(c)){
+    public static double score(Boardstate c, int k){
+        if (k <= 0 || !stillGoing(c)){
             return fScore(c);
         }
         double hs;
@@ -12,7 +12,7 @@ public class ScoreMove {
             ArrayList<Move> m = c.getLegalMoves();
             b = m.get(0);
             for (Move i : m){
-                double s = score(i.done(), d -1);
+                double s = score(i.done(), k -1);
                 if (s > hs){
                     hs = s;
                     b = i;
@@ -24,8 +24,8 @@ public class ScoreMove {
             ArrayList<Move> m = c.getLegalMoves();
             b = m.get(0);
             for (Move i : m){
-                double s = score(i.done(), d -1);
-                if (s > hs){
+                double s = score(i.done(), k -1);
+                if (s < hs){
                     hs = s;
                     b = i;
                 }
