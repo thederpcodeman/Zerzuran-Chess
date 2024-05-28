@@ -20,9 +20,6 @@ public class Tile {
         if (i == 0 || i == 5 || i == 6) {
             return false;
         }
-        if ((i == 1 || i == 2) && m.board.getTile(m.eX, m.eY).getPiece().Protection) {
-            return false;
-        }
         return true;
 
     }

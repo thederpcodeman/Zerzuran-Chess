@@ -1,5 +1,8 @@
 public class MCode {
     public static boolean ff(Move m){
+        if (m.board.getTile(m.eX, m.eY).getPiece() == null){
+            return false;
+        }
         if (m.board.getTile(m.eX, m.eY).getPiece().Color == m.board.getTile(m.sX, m.sY).getPiece().Color){
             return true;
         }

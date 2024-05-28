@@ -1,6 +1,6 @@
 public class Pawn extends Piece{
     public Pawn(int c){
-        super(false, false, 3, c);
+        super(false, false, 1, c);
         if (c == 0){
             fen = "p";
         }else if (c == 1){
@@ -11,7 +11,7 @@ public class Pawn extends Piece{
 
     }
     public int isLegalMove(Move m){
-        if (MCode.pawnTemplate(m)) {
+        if (MCode.square(m, 1)) {
             if (MCode.ff(m)) {
 
                 return 5;
