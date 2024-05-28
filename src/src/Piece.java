@@ -9,5 +9,4 @@ public abstract class Piece {
     }
     abstract void update();
     abstract int isLegalMove(Move m); //0 = No, 1 = Move, 2 = Destroy, 3 = Swap, 4 = En pessant
-
 }
