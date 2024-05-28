@@ -1,17 +1,12 @@
-public class Bishop extends Piece{
-    public Bishop(int c){
+public class Pawn extends Piece{
+    public Pawn(int c){
         super(false, false, 3, c);
-        if (c == 0){
-            fen = "b";
-        }else if (c == 1){
-            fen = "B";
-        }
     }
     public void update(){
 
     }
     public int isLegalMove(Move m){
-        if (MCode.bishop(m)) {
+        if (MCode.pawnTemplate(m)) {
             if (MCode.ff(m)) {
 
                 return 5;

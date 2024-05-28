@@ -41,6 +41,11 @@ public class Boardstate {
     } //creates a copy of a board
 
     public Tile getTile(int x, int y){
+        if ((x > X) || (x < 0) || (y > Y) || (y < 0)){
+            System.out.println(x);
+            System.out.println(y);
+            return null;
+        }
         return State.get(x).get(y);
     }
 

@@ -3,11 +3,13 @@ public abstract class Piece {
     public boolean Protection;
     public int Value;
     public int Color;
+    public String fen;
     public Piece(Boolean R, Boolean P, int V, int C){
         Royal = R;
         Protection = P;
         Value = V;
         Color = C;
+        fen = "_";
     }
     abstract void update();
     abstract int isLegalMove(Move m); //0 = No, 1 = Move, 2 = Destroy, 3 = Swap, 4 = En pessant, 5 = ffMove, 6 = ffDestroy
