@@ -13,13 +13,20 @@ public class Tile {
     }
 
     public boolean isLegalMove(Move m){
-        if ((m.sX == m.eX) && (m.sY == m.eY)){
+        if (getPiece() == null){
+            //System.out.println("a");
             return false;
         }
+        //if ((m.sX == m.eX) && (m.sY == m.eY)){
+        //    System.out.println("b");
+        //    return false;
+        //}
         int i = piece.isLegalMove(m);
         if (i == 0 || i == 5 || i == 6) {
+            //System.out.println("c: " + i);
             return false;
         }
+        //System.out.println("d");
         return true;
 
     }

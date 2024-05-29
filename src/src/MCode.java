@@ -1,12 +1,13 @@
 public class MCode {
     public static boolean ff(Move m){
-        if (m.board.getTile(m.eX, m.eY).getPiece() == null){
-            return false;
-        }
-        if (m.board.getTile(m.eX, m.eY).getPiece().Color == m.board.getTile(m.sX, m.sY).getPiece().Color){
-            return true;
-        }
-        return false;
+        return false;//debug
+        //if (m.board.getTile(m.eX, m.eY).getPiece() == null){
+        //    return false;
+        //}
+        //if (m.board.getTile(m.eX, m.eY).getPiece().Color == m.board.getTile(m.sX, m.sY).getPiece().Color){
+        //    return true;
+        //}
+        //return false;
     }
     public static boolean knight(Move m){
         if (((Math.abs(m.sX - m.eX) == 1) && (Math.abs(m.sY - m.eY) == 2)) || ((Math.abs(m.sX - m.eX) == 2) && (Math.abs(m.sY - m.eY) == 1))){

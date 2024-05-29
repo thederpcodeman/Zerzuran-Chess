@@ -75,10 +75,10 @@ public class Boardstate {
                 for (int eX = 0; eX < X; eX++){
                     for (int eY = 0; eY < Y; eY++){
                         Tile i = getTile(sX, sY);
-                        System.out.println(sX + "," + eX + ". " + sY + "," + eY);
-                        if ((i.getPiece() != null) && (i.isLegalMove(new Move(sX, eX, sY, eY, this)))){
+                        //System.out.println(sX + "," + eX + ". " + sY + "," + eY);
+                        if (i.isLegalMove(new Move(sX, eX, sY, eY, this))){
                             f.add(new Move(sX, eX, sY, eY, this));
-                            System.out.println(sX + "," + eX + ". " + sY + "," + eY + " V");
+                            //System.out.println(sX + "," + eX + ". " + sY + "," + eY + " V");
                         }
                     }
                 }
