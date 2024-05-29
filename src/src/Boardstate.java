@@ -112,4 +112,20 @@ public class Boardstate {
         }
         return f;
     }
+
+    public void printScreen(){
+        for (int i = 0; i < X; i ++){
+            String a = "";
+            for (int i2 = 0; i2 < Y; i2 ++) {
+                Piece p = getTile(i, i2).getPiece();
+                if (p == null){
+                    a += "_ ";
+                }else {
+                    a += p.fen + " ";
+                }
+
+            }
+            System.out.println(a);
+        }
+    }
 }

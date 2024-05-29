@@ -1,7 +1,13 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+
+
+
         Boardstate b = new Boardstate(8, 8);
 
         b.setTile(0,0, new Rook(0));
@@ -31,9 +37,11 @@ public class Main {
         }
 
         while (true){
-            System.out.println(b.fen());
+            b.printScreen();
+
+            Thread.sleep(1000);
+
             b = AI.ROB(b).done();
-            System.out.println(b.fen());
         }
     }
 }
