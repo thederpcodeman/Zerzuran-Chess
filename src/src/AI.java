@@ -4,6 +4,7 @@ public class AI {
     public static Move ROB(Boardstate b){
         double hs;
         ArrayList<Move> m = b.getLegalMoves();
+        System.out.println("legal moves: " + m.size());
         if (m.size() < 1){
             System.out.println(ScoreMove.fScore(b));
             System.exit(0);

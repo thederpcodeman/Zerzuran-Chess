@@ -21,7 +21,7 @@ public class Move {
 
     public Boardstate done(){
         int i = board.getTile(sX, sY).getPiece().isLegalMove(this);
-        Boardstate n = new Boardstate(board);
+        Boardstate n = new Boardstate(board);//yeah the bord it self is different but the tiles are the same.
         if (i == 1 || i == 4) {
             n.setTile(eX, eY, board.getTile(sX, sY).getPiece());
             n.setTile(sX, sY, null);

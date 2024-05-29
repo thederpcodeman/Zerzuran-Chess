@@ -30,7 +30,9 @@ public class Boardstate {
         for (int i = 0; i < X; i++){
             ArrayList<Tile> iAr = new ArrayList<>();
             for (int i2 = 0; i2 < Y; i2++){
-                iAr.add(new Tile());
+                Tile i3 = new Tile();
+                i3.setPiece(c.getTile(i, i2).getPiece());
+                iAr.add(i3);
             }
             State.add(iAr);
         }
